@@ -16,6 +16,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 os.environ['HF_TOKEN']=os.getenv("HF_TOKEN")
+os.environ['API_KEY']=os.getenv("API_KEY")
+
+api_key = os.environ['API_KEY']
 
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2",
@@ -25,7 +28,6 @@ embeddings = HuggingFaceEmbeddings(
 st.title("RAG With PDF uplaods and chat history")
 st.write("Upload Pdf's and chat with their content")
 
-api_key=st.text_input("Enter your Groq API key:",type="password")
 if api_key:
     llm=ChatGroq(groq_api_key=api_key,model_name="qwen/qwen3-32b")
 
