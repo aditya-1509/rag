@@ -25,7 +25,7 @@ embeddings = HuggingFaceEmbeddings(
     model_kwargs={"device": "cpu"}
 )
 
-st.title("RAG With PDF uplaods and chat history")
+st.title("RAG With PDF uploads and chat history")
 st.write("Upload Pdf's and chat with their content")
 
 if api_key:
